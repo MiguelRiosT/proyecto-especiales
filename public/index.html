@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie de Fourier Interactiva</title>
+    <link rel="stylesheet" href="../src/style.css">
+
+    <!-- Cargar MathJax para renderizar LaTeX -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <h1>Serie de Fourier Interactiva</h1>
+    
+    <!-- Lienzo para dibujar -->
+    <div class="canvas-container">
+        <canvas id="drawCanvas"></canvas>
+    </div>
+
+    <!-- Controles -->
+    <div class="controls-container">
+        <button id="clearCanvas">Limpiar Lienzo</button>
+        <button id="undo">Deshacer</button>
+        <button id="generateFourier">Generar Serie de Fourier</button>
+        <button id="uploadFourier">Subir Serie</button>
+
+        <!-- Controles de Zoom -->
+        <div class="zoom-controls">
+            <button id="zoomOut">- Zoom</button>
+            <button id="zoomIn">+ Zoom</button>
+        </div>
+    </div>
+    
+
+    <!-- Contenedor con título y ecuación -->
+    <div class="fourier-container">
+        <h2>Función Matemática de Serie</h2>
+        <div id="fourierEquation">La ecuación aparecerá aquí.</div>
+        <button id="copyEquation">Copiar Serie en LaTeX</button>
+        <button id="copyEquationJSON">Copiar Serie en JSON</button>
+    </div>
+
+    <div id="uploadPopup" class="popup">
+        <div class="popup-content">
+            <h2>Ingresar Serie de Fourier</h2>
+            <textarea id="fourierInput" rows="5" placeholder='Ingresa la serie en formato JSON'></textarea>
+            <button id="confirmUpload">Cargar Serie</button>
+            <button id="closePopup">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="../src/main.js"></script>
+</body>
+</html>
